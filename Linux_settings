@@ -1,0 +1,45 @@
+vi /etc/hostname   - change hostname
+/etc/sysconfig/network-scripts/   --change onboot setting for network
+or 
+/etc/NetworkManager/system-connections
+[ipv4]
+address1=192.168.122.12/24,192.168.122.1
+dns=192.168.122.1;
+method=manual
+
+
+ip addr    --check ip address
+
+nmtui
+nmcli
+
+ONBOOT=yes
+IPADDR=192.168.122.12
+PREFIX=24
+GATEWAY=192.168.122.1
+DNS1=192.168.122.1
+
+sudo timedatectl set-timezone Asia/Muscat    --time settings
+firewall-cmd --zone=public --add-port=8080/tcp --permanent      
+sudo netstat -tulpn | grep LISTEN   --port check
+
+Create user:
+adduser appadmin
+passwd appadmin
+usermod -a -G wheel appadmin
+
+Create Group:
+groupadd testg
+cat /etc/passwd
+cat /etc/group
+id maravinth
+sudo usermod -Gtestg maravinth
+
+usermod -s /sbin/nologin appadmin     -diable login
+
+
+
+sudo visudo   -edit sudo file
+
+appadmin ALL=(ALL:ALL)         NOPASSWD: /bin/bash, /bin/systemctl start nginx, /bin/systemctl stop nginx     -add this cmd in sudo file
+maravinth  ALL= /bin/su, /sbin/shutdown now, /sbin/reboot
