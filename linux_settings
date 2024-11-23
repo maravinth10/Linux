@@ -23,6 +23,7 @@ sudo timedatectl set-timezone Asia/Muscat    --time settings
 firewall-cmd --zone=public --add-port=8080/tcp --permanent      
 sudo netstat -tulpn | grep LISTEN   --port check
 ss -lntu    -- port check
+ufw status  --firewall status
 
 Create user:
 adduser appadmin
