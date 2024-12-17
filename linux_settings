@@ -39,6 +39,8 @@ sudo usermod -Gtestg maravinth
 
 usermod -s /sbin/nologin appadmin     -diable login
 
+copy cmd
+scp -r node maravinth@4.172.206.215:/home/maravinth
 
 
 sudo visudo   -edit sudo file
